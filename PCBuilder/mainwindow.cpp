@@ -194,7 +194,7 @@ public :
     void setprice(int v){
             price=v;
         }
-
+    int flag[6]={0,0,0,0,0,0};
 
 };
 
@@ -321,49 +321,89 @@ void build_pc(PC* pc,Processor *processor, Graphics *graphics, Ram *ram, Storage
     }
     int bench[]={0,0,0,0,0,0};
     int sum = arr[i];
-    while(budget<sum)
+    pc[0].processor.brand = processor[i-bench[0]].brand;
+    pc[0].processor.model = processor[i-bench[0]].model;
+    pc[0].processor.setprice(processor[i-bench[0]].getprice());
+    pc[0].processor.cores= processor[i-bench[0]].cores;
+    pc[0].processor.threads= processor[i-bench[0]].threads;
+    pc[0].ram.brand=ram[i-bench[2]].brand;
+    pc[0].ram.model=ram[i-bench[2]].model;
+    pc[0].ram.setprice(ram[i-bench[2]].getprice());
+    pc[0].ram.type=ram[i-bench[2]].type;
+    pc[0].ram.Rsize=ram[i-bench[2]].Rsize;
+    pc[0].storage.brand=storage[i-bench[3]].brand;
+    pc[0].storage.model=storage[i-bench[3]].model;
+    pc[0].storage.setprice(storage[i-bench[3]].getprice());
+    pc[0].storage.interface=storage[i-bench[3]].interface;
+    pc[0].storage.type=storage[i-bench[3]].type;
+    pc[0].storage.cache=storage[i-bench[3]].cache;
+    pc[0].storage.capacity=storage[i-bench[3]].capacity;
+    pc[0].graphics.brand=graphics[i-bench[1]].brand;
+    pc[0].graphics.model=graphics[i-bench[1]].model;
+    pc[0].graphics.setprice(graphics[i-bench[1]].getprice());
+    pc[0].graphics.memory=graphics[i-bench[1]].memory;
+    pc[0].graphics.interface=graphics[i-bench[1]].interface;
+    pc[0].graphics.chipset=graphics[i-bench[1]].chipset;
+    pc[0].motherboard.brand=motherboard[i-bench[4]].brand;
+    pc[0].motherboard.model=motherboard[i-bench[4]].model;
+    pc[0].motherboard.setprice(motherboard[i-bench[4]].getprice());
+    pc[0].motherboard.socket=motherboard[i-bench[4]].socket;
+    pc[0].motherboard.chipset=motherboard[i-bench[4]].chipset;
+    pc[0].powersupply.brand= powersupply[i-bench[5]].brand;
+    pc[0].powersupply.model= powersupply[i-bench[5]].model;
+    pc[0].powersupply.setprice(powersupply[i-bench[5]].getprice());
+    pc[0].powersupply.power=powersupply[i-bench[5]].power;
+    pc[0].setprice(sum);
+
+    int counter1=1, counter2=0;
+    while(counter1<6 && counter2<64)
     {
         addbinary(bench);
         sum= processor[i-bench[0]].getprice()+graphics[i-bench[1]].getprice()+ram[i-bench[2]].getprice()+storage[i-bench[3]].getprice()+motherboard[i-bench[4]].getprice()+powersupply[i-bench[5]].getprice();
+        if(sum<=budget)
+        {
+            pc[counter1].processor.brand = processor[i-bench[0]].brand;
+            pc[counter1].processor.model = processor[i-bench[0]].model;
+            pc[counter1].processor.setprice(processor[i-bench[0]].getprice());
+            pc[counter1].processor.cores= processor[i-bench[0]].cores;
+            pc[counter1].processor.threads= processor[i-bench[0]].threads;
+            pc[counter1].ram.brand=ram[i-bench[2]].brand;
+            pc[counter1].ram.model=ram[i-bench[2]].model;
+            pc[counter1].ram.setprice(ram[i-bench[2]].getprice());
+            pc[counter1].ram.type=ram[i-bench[2]].type;
+            pc[counter1].ram.Rsize=ram[i-bench[2]].Rsize;
+            pc[counter1].storage.brand=storage[i-bench[3]].brand;
+            pc[counter1].storage.model=storage[i-bench[3]].model;
+            pc[counter1].storage.setprice(storage[i-bench[3]].getprice());
+            pc[counter1].storage.interface=storage[i-bench[3]].interface;
+            pc[counter1].storage.type=storage[i-bench[3]].type;
+            pc[counter1].storage.cache=storage[i-bench[3]].cache;
+            pc[counter1].storage.capacity=storage[i-bench[3]].capacity;
+            pc[counter1].graphics.brand=graphics[i-bench[1]].brand;
+            pc[counter1].graphics.model=graphics[i-bench[1]].model;
+            pc[counter1].graphics.setprice(graphics[i-bench[1]].getprice());
+            pc[counter1].graphics.memory=graphics[i-bench[1]].memory;
+            pc[counter1].graphics.interface=graphics[i-bench[1]].interface;
+            pc[counter1].graphics.chipset=graphics[i-bench[1]].chipset;
+            pc[counter1].motherboard.brand=motherboard[i-bench[4]].brand;
+            pc[counter1].motherboard.model=motherboard[i-bench[4]].model;
+            pc[counter1].motherboard.setprice(motherboard[i-bench[4]].getprice());
+            pc[counter1].motherboard.socket=motherboard[i-bench[4]].socket;
+            pc[counter1].motherboard.chipset=motherboard[i-bench[4]].chipset;
+            pc[counter1].powersupply.brand= powersupply[i-bench[5]].brand;
+            pc[counter1].powersupply.model= powersupply[i-bench[5]].model;
+            pc[counter1].powersupply.setprice(powersupply[i-bench[5]].getprice());
+            pc[counter1].powersupply.power=powersupply[i-bench[5]].power;
+            pc[counter1].setprice(sum);
+            counter1+=1;
+            for(int i=0;i<6;i++)
+            {
+                pc[counter1].flag[i] = bench[i];
+            }
+        }
+        counter2+=1;
     }
-    cout<<endl<<i<<" "<<arr[i]<<endl;
-    for(int i=0;i<6;i++)
-        cout<<bench[i]<<" ";
-    cout<<endl<<sum<<endl;
 
-    pc->processor.brand = processor[i-bench[0]].brand;
-    pc->processor.model = processor[i-bench[0]].model;
-    pc->processor.setprice(processor[i-bench[0]].getprice());
-    pc->processor.cores= processor[i-bench[0]].cores;
-    pc->processor.threads= processor[i-bench[0]].threads;
-    pc->ram.brand=ram[i-bench[2]].brand;
-    pc->ram.model=ram[i-bench[2]].model;
-    pc->ram.setprice(ram[i-bench[2]].getprice());
-    pc->ram.type=ram[i-bench[2]].type;
-    pc->ram.Rsize=ram[i-bench[2]].Rsize;
-    pc->storage.brand=storage[i-bench[3]].brand;
-    pc->storage.model=storage[i-bench[3]].model;
-    pc->storage.setprice(storage[i-bench[3]].getprice());
-    pc->storage.interface=storage[i-bench[3]].interface;
-    pc->storage.type=storage[i-bench[3]].type;
-    pc->storage.cache=storage[i-bench[3]].cache;
-    pc->storage.capacity=storage[i-bench[3]].capacity;
-    pc->graphics.brand=graphics[i-bench[1]].brand;
-    pc->graphics.model=graphics[i-bench[1]].model;
-    pc->graphics.setprice(graphics[i-bench[1]].getprice());
-    pc->graphics.memory=graphics[i-bench[1]].memory;
-    pc->graphics.interface=graphics[i-bench[1]].interface;
-    pc->graphics.chipset=graphics[i-bench[1]].chipset;
-    pc->motherboard.brand=motherboard[i-bench[4]].brand;
-    pc->motherboard.model=motherboard[i-bench[4]].model;
-    pc->motherboard.setprice(motherboard[i-bench[4]].getprice());
-    pc->motherboard.socket=motherboard[i-bench[4]].socket;
-    pc->motherboard.chipset=motherboard[i-bench[4]].chipset;
-    pc->powersupply.brand= powersupply[i-bench[5]].brand;
-    pc->powersupply.model= powersupply[i-bench[5]].model;
-    pc->powersupply.setprice(powersupply[i-bench[5]].getprice());
-    pc->powersupply.power=powersupply[i-bench[5]].power;
-    pc->setprice(sum);
 }
 
 void showpc(PC pc)
@@ -397,8 +437,9 @@ class prgdata{
     Storage storage[20];
     Motherboard motherboard[20];
     Powersupply powersupply[20];
-    PC pc;
+    PC pc[6];
     QString min, max;
+    int pak=1;
 
 
 };
@@ -444,10 +485,6 @@ void runprogram(){
 
 }
 
-void MainWindow::on_bPakage1_clicked()
-{
-
-}
 
 
 void MainWindow::on_bBuild_clicked()
@@ -461,35 +498,149 @@ void MainWindow::on_bBuild_clicked()
         ui->display->setText("Insufficient Amount:\n You Broke, Bitch!!!");
     }
     else{
-        QString s = QString::number(prg.budget);
-        build_pc(&prg.pc,prg.processor,prg.graphics,prg.ram,prg.storage,prg.motherboard,prg.powersupply,prg.arra,prg.budget);
-        ui->display->setText("Models ready");
-        ui->leBrandproce->setText(QString::fromUtf8(prg.pc.processor.brand.c_str()));
-        ui->leBrandgraph->setText(QString::fromUtf8(prg.pc.graphics.brand.c_str()));
-        ui->leBrandram->setText(QString::fromUtf8(prg.pc.ram.brand.c_str()));
-        ui->leBrandstora->setText(QString::fromUtf8(prg.pc.storage.brand.c_str()));
-        ui->leBrandmother->setText(QString::fromUtf8(prg.pc.motherboard.brand.c_str()));
-        ui->leBrandpower->setText(QString::fromUtf8(prg.pc.powersupply.brand.c_str()));
-
-
-        ui->leModelProce->setText(QString::fromUtf8(prg.pc.processor.model.c_str()));
-        ui->leModelgraph->setText(QString::fromUtf8(prg.pc.graphics.model.c_str()));
-        ui->leModelram->setText(QString::fromUtf8(prg.pc.ram.model.c_str()));
-        ui->leModelstorag->setText(QString::fromUtf8(prg.pc.storage.model.c_str()));
-        ui->leModelmother->setText(QString::fromUtf8(prg.pc.motherboard.model.c_str()));
-        ui->leModelpower->setText(QString::fromUtf8(prg.pc.powersupply.model.c_str()));
-
-
-        ui->lePriceproces->setText(QString::number(prg.pc.processor.getprice()));
-        ui->lePricegraphi->setText(QString::number(prg.pc.graphics.getprice()));
-        ui->lePriceram->setText(QString::number(prg.pc.ram.getprice()));
-        ui->lePricestorag->setText(QString::number(prg.pc.storage.getprice()));
-        ui->lePricemother->setText(QString::number(prg.pc.motherboard.getprice()));
-        ui->lePricepower->setText(QString::number(prg.pc.powersupply.getprice()));
-        ui->lefinalprice->setText(QString::number(prg.pc.getprice()));
-        //showpc(prg.pc);
-
+       setvalues();
+       S="Optimum Package\n\n";
+       features();
+       ui->display->setText(S);
     }
 
+}
+
+void MainWindow::setvalues(){
+    QString s = QString::number(prg.budget);
+    build_pc(prg.pc,prg.processor,prg.graphics,prg.ram,prg.storage,prg.motherboard,prg.powersupply,prg.arra,prg.budget);
+    ui->display->setText("Models ready");
+    ui->leBrandproce->setText(QString::fromUtf8(prg.pc[prg.pak].processor.brand.c_str()));
+    ui->leBrandgraph->setText(QString::fromUtf8(prg.pc[prg.pak].graphics.brand.c_str()));
+    ui->leBrandram->setText(QString::fromUtf8(prg.pc[prg.pak].ram.brand.c_str()));
+    ui->leBrandstora->setText(QString::fromUtf8(prg.pc[prg.pak].storage.brand.c_str()));
+    ui->leBrandmother->setText(QString::fromUtf8(prg.pc[prg.pak].motherboard.brand.c_str()));
+    ui->leBrandpower->setText(QString::fromUtf8(prg.pc[prg.pak].powersupply.brand.c_str()));
+
+
+    ui->leModelProce->setText(QString::fromUtf8(prg.pc[prg.pak].processor.model.c_str()));
+    ui->leModelgraph->setText(QString::fromUtf8(prg.pc[prg.pak].graphics.model.c_str()));
+    ui->leModelram->setText(QString::fromUtf8(prg.pc[prg.pak].ram.model.c_str()));
+    ui->leModelstorag->setText(QString::fromUtf8(prg.pc[prg.pak].storage.model.c_str()));
+    ui->leModelmother->setText(QString::fromUtf8(prg.pc[prg.pak].motherboard.model.c_str()));
+    ui->leModelpower->setText(QString::fromUtf8(prg.pc[prg.pak].powersupply.model.c_str()));
+
+
+    ui->lePriceproces->setText(QString::number(prg.pc[prg.pak].processor.getprice()));
+    ui->lePricegraphi->setText(QString::number(prg.pc[prg.pak].graphics.getprice()));
+    ui->lePriceram->setText(QString::number(prg.pc[prg.pak].ram.getprice()));
+    ui->lePricestorag->setText(QString::number(prg.pc[prg.pak].storage.getprice()));
+    ui->lePricemother->setText(QString::number(prg.pc[prg.pak].motherboard.getprice()));
+    ui->lePricepower->setText(QString::number(prg.pc[prg.pak].powersupply.getprice()));
+    ui->lefinalprice->setText(QString::number(prg.pc[prg.pak].getprice()));
+    ui->lefinalprice->setReadOnly(true);
+    ui->leBrandgraph->setReadOnly(true);
+    ui->leBrandram->setReadOnly(true);
+    ui->leBrandstora->setReadOnly(true);
+    ui->leBrandproce->setReadOnly(true);
+    ui->leBrandmother->setReadOnly(true);
+    ui->leBrandpower->setReadOnly(true);
+    ui->leModelgraph->setReadOnly(true);
+    ui->leModelram->setReadOnly(true);
+    ui->leModelstorag->setReadOnly(true);
+    ui->leModelProce->setReadOnly(true);
+    ui->leModelmother->setReadOnly(true);
+    ui->leModelpower->setReadOnly(true);
+    ui->lePricegraphi->setReadOnly(true);
+    ui->lePriceram->setReadOnly(true);
+    ui->lePricestorag->setReadOnly(true);
+    ui->lePriceproces->setReadOnly(true);
+    ui->lePricemother->setReadOnly(true);
+    ui->lePricepower->setReadOnly(true);
+
+}
+
+void MainWindow::features(){
+    if(prg.pc[prg.pak].flag[0]==0)
+    {
+        S=S+"->Slightly Powerfull Processor\n";
+    }
+    if(prg.pc[prg.pak].flag[1]==0)
+    {
+        S=S+"->Stronger GPU\n";
+    }
+    if(prg.pc[prg.pak].flag[2]==0)
+    {
+
+        S=S+"->Larger Ram\n";
+    }
+    if(prg.pc[prg.pak].flag[3]==0)
+    {
+        S=S+"->Better Storage Device\n";
+    }
+    if(prg.pc[prg.pak].flag[4]==0)
+    {
+        S=S+"->Better Quality Motherboard\n";
+    }
+    if(prg.pc[prg.pak].flag[5]==0)
+    {
+        S=S+"->More Efficient PowerSource\n";
+    }
+
+
+}
+
+void MainWindow::on_bPakage1_clicked()
+{
+    prg.pak = 1;
+    setvalues();
+    S="Optimum Package\n\n";
+    features();
+    ui->display->setText(S);
+}
+
+
+void MainWindow::on_bPakage2_clicked()
+{
+    prg.pak = 2;
+    setvalues();
+    S="Package Option 2\n\n";
+    features();
+    ui->display->setText(S);
+}
+
+
+void MainWindow::on_bPakage3_clicked()
+{
+    prg.pak = 3;
+    setvalues();
+    S="Package 3\n\n";
+    features();
+    ui->display->setText(S);
+}
+
+
+void MainWindow::on_bPakage4_clicked()
+{
+    prg.pak = 4;
+    setvalues();
+    S="Choose Already Package\n\n";
+    features();
+    ui->display->setText(S);
+}
+
+
+void MainWindow::on_bPakage5_clicked()
+{
+    prg.pak = 5;
+    setvalues();
+    S="Really?... Package\n\n";
+    features();
+    ui->display->setText(S);
+}
+
+
+void MainWindow::on_bPakage6_clicked()
+{
+    prg.pak = 0;
+    setvalues();
+    S="So you've choose Death!!!...Package\n\n";
+    features();
+    ui->display->setText(S);
 }
 

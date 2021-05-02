@@ -18,11 +18,24 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setvalues();
+    void features();
+    QString S="";
 
 private slots:
     void on_bPakage1_clicked();
 
     void on_bBuild_clicked();
+
+    void on_bPakage2_clicked();
+
+    void on_bPakage3_clicked();
+
+    void on_bPakage4_clicked();
+
+    void on_bPakage5_clicked();
+
+    void on_bPakage6_clicked();
 
 private:
     Ui::MainWindow *ui;

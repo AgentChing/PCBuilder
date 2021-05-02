@@ -256,7 +256,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Package 6</string>
+     <string>S.Y.L Package</string>
     </property>
    </widget>
    <widget class="Line" name="line_6">

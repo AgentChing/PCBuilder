@@ -472,7 +472,7 @@ public:
         bPakage3->setText(QCoreApplication::translate("MainWindow", "Package 3", nullptr));
         bPakage4->setText(QCoreApplication::translate("MainWindow", "Package 4", nullptr));
         bPakage5->setText(QCoreApplication::translate("MainWindow", "Package 5", nullptr));
-        bPakage6->setText(QCoreApplication::translate("MainWindow", "Package 6", nullptr));
+        bPakage6->setText(QCoreApplication::translate("MainWindow", "S.Y.L Package", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Final Price :", nullptr));
         lefinalprice->setText(QString());
         label_5->setText(QCoreApplication::translate("MainWindow", "Processor", nullptr));
