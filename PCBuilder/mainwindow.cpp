@@ -555,31 +555,90 @@ void MainWindow::setvalues(){
 
 }
 
+void MainWindow::displayprocessors(){
+    S2 = "PROCESSOR :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].processor.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].processor.model.c_str());
+    S2 = S2+"\n\t_Cores:     "+QString::number(prg.pc[prg.pak].processor.cores);
+    S2 = S2+"\n\t_Threads:   "+QString::number(prg.pc[prg.pak].processor.threads);
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].processor.getprice());
+}
+void MainWindow::displaygraphics(){
+    S2 = "GRAPHICS :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].graphics.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].graphics.model.c_str());
+    S2 = S2+"\n\t_Memory:    "+QString::fromUtf8(prg.pc[prg.pak].graphics.memory.c_str());
+    S2 = S2+"\n\t_Interface: "+QString::fromUtf8(prg.pc[prg.pak].graphics.interface.c_str());
+    S2 = S2+"\n\t_ChipSet:   "+QString::fromUtf8(prg.pc[prg.pak].graphics.chipset.c_str());
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].graphics.getprice());
+}
+void MainWindow::displayram(){
+    S2 = "RAM :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].ram.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].ram.model.c_str());
+    S2 = S2+"\n\t_Type:      "+QString::fromUtf8(prg.pc[prg.pak].ram.type.c_str());
+    S2 = S2+"\n\t_Size:      "+QString::number(prg.pc[prg.pak].ram.Rsize);
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].ram.getprice());
+}
+void MainWindow::displaystorage(){
+    S2 = "STORAGE :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].storage.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].storage.model.c_str());
+    S2 = S2+"\n\t_Interface: "+QString::fromUtf8(prg.pc[prg.pak].storage.interface.c_str());
+    S2 = S2+"\n\t_Type:      "+QString::fromUtf8(prg.pc[prg.pak].storage.type.c_str());
+    S2 = S2+"\n\t_Cache:     "+QString::fromUtf8(prg.pc[prg.pak].storage.cache.c_str());
+    S2 = S2+"\n\t_Capacity:  "+QString::fromUtf8(prg.pc[prg.pak].storage.capacity.c_str());
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].storage.getprice());
+}
+void MainWindow::displaymother(){
+    S2 = "MOTHERBOARD :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].motherboard.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].motherboard.model.c_str());
+    S2 = S2+"\n\t_Socket:    "+QString::fromUtf8(prg.pc[prg.pak].motherboard.socket.c_str());
+    S2 = S2+"\n\t_Chipset:   "+QString::fromUtf8(prg.pc[prg.pak].motherboard.chipset.c_str());
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].motherboard.getprice());
+
+}
+void MainWindow::displaypower(){
+    S2 = "POWER-SUPPLY :";
+    S2 = S2+"\n\t_Brand:     "+QString::fromUtf8(prg.pc[prg.pak].powersupply.brand.c_str());
+    S2 = S2+"\n\t_Model:     "+QString::fromUtf8(prg.pc[prg.pak].powersupply.model.c_str());
+    S2 = S2+"\n\t_Power:     "+QString::fromUtf8(prg.pc[prg.pak].powersupply.power.c_str());
+    S2 = S2+"\n\t_Price:______________________________________ "+QString::number(prg.pc[prg.pak].powersupply.getprice());
+
+}
+
 void MainWindow::features(){
     if(prg.pc[prg.pak].flag[0]==0)
     {
         S=S+"->Slightly Powerfull Processor\n";
+        perks=perks+"->Slightly Powerfull Processor\n";
     }
     if(prg.pc[prg.pak].flag[1]==0)
     {
         S=S+"->Stronger GPU\n";
+        perks=perks+"->Stronger GPU\n";
     }
     if(prg.pc[prg.pak].flag[2]==0)
     {
 
         S=S+"->Larger Ram\n";
+        perks=perks+"->Larger Ram\n";
     }
     if(prg.pc[prg.pak].flag[3]==0)
     {
         S=S+"->Better Storage Device\n";
+        perks=perks+"->Better Storage Device\n";
     }
     if(prg.pc[prg.pak].flag[4]==0)
     {
         S=S+"->Better Quality Motherboard\n";
+        perks=perks+"->Better Quality Motherboard\n";
     }
     if(prg.pc[prg.pak].flag[5]==0)
     {
         S=S+"->More Efficient PowerSource\n";
+        perks=perks+"->More Efficient PowerSource\n";
     }
 
 
@@ -642,5 +701,85 @@ void MainWindow::on_bPakage6_clicked()
     S="So you've choose Death!!!...Package\n\n";
     features();
     ui->display->setText(S);
+}
+
+
+
+void MainWindow::on_bDetailprocessor_clicked()
+{
+    displayprocessors();
+    ui->display->setText(S2);
+    S2="";
+}
+
+
+void MainWindow::on_bDetailgraphics_clicked()
+{
+    displaygraphics();
+    ui->display->setText(S2);
+    S2="";
+}
+
+
+void MainWindow::on_bDetailram_clicked()
+{
+    displayram();
+    ui->display->setText(S2);
+    S2="";
+
+}
+
+
+void MainWindow::on_bDetailstore_clicked()
+{
+    displaystorage();
+    ui->display->setText(S2);
+    S2="";
+}
+
+
+void MainWindow::on_bDetailmother_clicked()
+{
+    displaymother();
+    ui->display->setText(S2);
+    S2="";
+}
+
+
+void MainWindow::on_bDetailpower_clicked()
+{
+    displaypower();
+    ui->display->setText(S2);
+    S2="";
+}
+
+
+void MainWindow::on_bDetailram_2_clicked()
+{
+    QString Temp;
+    Temp=S;
+    S = S2;
+    S=S+"\nFinal Price Of This Modal:_________________________________ ";
+    S=S+QString::number(prg.pc[prg.pak].getprice());
+    S=S+"\n\n";
+    displayprocessors();
+    S = S+S2+"\n\n";
+    displaygraphics();
+    S = S+S2+"\n\n";
+    displayram();
+    S = S+S2+"\n\n";
+    displaystorage();
+    S = S+S2+"\n\n";
+    displaymother();
+    S = S+S2+"\n\n";
+    displaypower();
+    S = S+S2+"\n\n";
+    S=S+"\n----------------------------------------------------------------------------\n";
+    S=S+"Perks:\n";
+    S=S+perks;
+    ui->display->setText(S);
+
+    S = Temp;
+    S2="";
 }
 
