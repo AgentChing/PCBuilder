@@ -452,7 +452,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
 
         int status = readfile(prg.processor,prg.graphics,prg.ram,prg.storage,prg.motherboard,prg.powersupply, ui);
@@ -468,6 +467,18 @@ MainWindow::MainWindow(QWidget *parent)
             ui->leMaxprice->setText(prg.max);
             ui->leMinprice->setReadOnly(true);
             ui->leMaxprice->setReadOnly(true);
+            ui->bDetailgraphics->setEnabled(false);
+            ui->bDetailprocessor->setEnabled(false);
+            ui->bDetailram->setEnabled(false);
+            ui->bDetailstore->setEnabled(false);
+            ui->bDetailmother->setEnabled(false);
+            ui->bDetailpower->setEnabled(false);
+            ui->bPakage1->setEnabled(false);
+            ui->bPakage2->setEnabled(false);
+            ui->bPakage3->setEnabled(false);
+            ui->bPakage4->setEnabled(false);
+            ui->bPakage5->setEnabled(false);
+            ui->bPakage6->setEnabled(false);
 
 
 
@@ -494,14 +505,31 @@ void MainWindow::on_bBuild_clicked()
    //max = ui->leMaxprice->text().toInt();
     min = ui->leMinprice->text().toInt();
     if(prg.budget<min)
-    {
-        ui->display->setText("Insufficient Amount:\n You Broke, Bitch!!!");
+    {   QString te ="This Amount is Too Little.\n\nMaybe you'd like to buy a Calculator?\nAnyways,Look at the Min. and Max. Price to decide.";
+        for(int i=0;i<38;i++)
+        {
+            te=te+'\n';
+        }
+           te=te+ "\t\t\t\t   Now get your Broke Ass outta here!!";
+        ui->display->setText(te);;
     }
     else{
        setvalues();
        S="Optimum Package\n\n";
        features();
        ui->display->setText(S);
+       ui->bDetailgraphics->setEnabled(true);
+       ui->bDetailprocessor->setEnabled(true);
+       ui->bDetailram->setEnabled(true);
+       ui->bDetailstore->setEnabled(true);
+       ui->bDetailmother->setEnabled(true);
+       ui->bDetailpower->setEnabled(true);
+       ui->bPakage1->setEnabled(true);
+       ui->bPakage2->setEnabled(true);
+       ui->bPakage3->setEnabled(true);
+       ui->bPakage4->setEnabled(true);
+       ui->bPakage5->setEnabled(true);
+       ui->bPakage6->setEnabled(true);
     }
 
 }
@@ -751,6 +779,7 @@ void MainWindow::on_bDetailpower_clicked()
     displaypower();
     ui->display->setText(S2);
     S2="";
+    perks="";
 }
 
 
@@ -759,7 +788,7 @@ void MainWindow::on_bDetailram_2_clicked()
     QString Temp;
     Temp=S;
     S = S2;
-    S=S+"\nFinal Price Of This Modal:_________________________________ ";
+    S=S+"\nTHIS PACKAGE WILL COST YOU :_________________________________ ";
     S=S+QString::number(prg.pc[prg.pak].getprice());
     S=S+"\n\n";
     displayprocessors();
@@ -780,6 +809,7 @@ void MainWindow::on_bDetailram_2_clicked()
     ui->display->setText(S);
 
     S = Temp;
+    perks = "";
     S2="";
 }
 

@@ -117,6 +117,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1239, 744);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(42, 42, 42);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         line = new QFrame(centralwidget);
@@ -132,6 +133,7 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         display = new QTextBrowser(verticalLayoutWidget);
         display->setObjectName(QString::fromUtf8("display"));
+        display->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(display);
 
@@ -141,16 +143,24 @@ public:
         QFont font;
         font.setPointSize(9);
         label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(10, 80, 111, 31));
         label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         leMinprice = new QLineEdit(centralwidget);
         leMinprice->setObjectName(QString::fromUtf8("leMinprice"));
         leMinprice->setGeometry(QRect(10, 40, 141, 31));
+        leMinprice->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);"));
         leMaxprice = new QLineEdit(centralwidget);
         leMaxprice->setObjectName(QString::fromUtf8("leMaxprice"));
         leMaxprice->setGeometry(QRect(10, 120, 141, 31));
+        leMaxprice->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);"));
         line_2 = new QFrame(centralwidget);
         line_2->setObjectName(QString::fromUtf8("line_2"));
         line_2->setGeometry(QRect(0, 70, 161, 20));
@@ -162,9 +172,11 @@ public:
         QFont font1;
         font1.setPointSize(11);
         label_3->setFont(font1);
+        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 170, 0);"));
         leBudget = new QLineEdit(centralwidget);
         leBudget->setObjectName(QString::fromUtf8("leBudget"));
         leBudget->setGeometry(QRect(350, 30, 181, 31));
+        leBudget->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         line_3 = new QFrame(centralwidget);
         line_3->setObjectName(QString::fromUtf8("line_3"));
         line_3->setGeometry(QRect(180, 70, 461, 20));
@@ -183,21 +195,33 @@ public:
         bPakage1 = new QPushButton(centralwidget);
         bPakage1->setObjectName(QString::fromUtf8("bPakage1"));
         bPakage1->setGeometry(QRect(210, 90, 101, 21));
+        bPakage1->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bPakage2 = new QPushButton(centralwidget);
         bPakage2->setObjectName(QString::fromUtf8("bPakage2"));
         bPakage2->setGeometry(QRect(360, 90, 101, 21));
+        bPakage2->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bPakage3 = new QPushButton(centralwidget);
         bPakage3->setObjectName(QString::fromUtf8("bPakage3"));
         bPakage3->setGeometry(QRect(510, 90, 101, 21));
+        bPakage3->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bPakage4 = new QPushButton(centralwidget);
         bPakage4->setObjectName(QString::fromUtf8("bPakage4"));
         bPakage4->setGeometry(QRect(210, 130, 101, 21));
+        bPakage4->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bPakage5 = new QPushButton(centralwidget);
         bPakage5->setObjectName(QString::fromUtf8("bPakage5"));
         bPakage5->setGeometry(QRect(360, 130, 101, 21));
+        bPakage5->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bPakage6 = new QPushButton(centralwidget);
         bPakage6->setObjectName(QString::fromUtf8("bPakage6"));
         bPakage6->setGeometry(QRect(510, 130, 101, 21));
+        bPakage6->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         line_6 = new QFrame(centralwidget);
         line_6->setObjectName(QString::fromUtf8("line_6"));
         line_6->setGeometry(QRect(0, 620, 641, 20));
@@ -209,18 +233,22 @@ public:
         QFont font2;
         font2.setPointSize(13);
         label_4->setFont(font2);
+        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 170, 0);"));
         lefinalprice = new QLineEdit(centralwidget);
         lefinalprice->setObjectName(QString::fromUtf8("lefinalprice"));
         lefinalprice->setGeometry(QRect(140, 640, 341, 41));
         QFont font3;
         font3.setPointSize(12);
         lefinalprice->setFont(font3);
+        lefinalprice->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(10, 220, 91, 31));
         QFont font4;
         font4.setPointSize(8);
         label_5->setFont(font4);
+        label_5->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         line_7 = new QFrame(centralwidget);
         line_7->setObjectName(QString::fromUtf8("line_7"));
         line_7->setGeometry(QRect(0, 180, 641, 16));
@@ -229,110 +257,159 @@ public:
         bDetailgraphics = new QPushButton(centralwidget);
         bDetailgraphics->setObjectName(QString::fromUtf8("bDetailgraphics"));
         bDetailgraphics->setGeometry(QRect(560, 300, 51, 21));
+        bDetailgraphics->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailprocessor = new QPushButton(centralwidget);
         bDetailprocessor->setObjectName(QString::fromUtf8("bDetailprocessor"));
         bDetailprocessor->setGeometry(QRect(560, 220, 51, 21));
+        bDetailprocessor->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailram = new QPushButton(centralwidget);
         bDetailram->setObjectName(QString::fromUtf8("bDetailram"));
         bDetailram->setGeometry(QRect(560, 380, 51, 21));
+        bDetailram->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailstore = new QPushButton(centralwidget);
         bDetailstore->setObjectName(QString::fromUtf8("bDetailstore"));
         bDetailstore->setGeometry(QRect(560, 460, 51, 21));
+        bDetailstore->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailmother = new QPushButton(centralwidget);
         bDetailmother->setObjectName(QString::fromUtf8("bDetailmother"));
         bDetailmother->setGeometry(QRect(560, 530, 51, 21));
+        bDetailmother->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailpower = new QPushButton(centralwidget);
         bDetailpower->setObjectName(QString::fromUtf8("bDetailpower"));
         bDetailpower->setGeometry(QRect(560, 590, 51, 21));
+        bDetailpower->setStyleSheet(QString::fromUtf8("border: 0.5px  solid rgb(77, 232, 0);\n"
+"color: rgb(255, 255, 255);"));
         bDetailram_2 = new QPushButton(centralwidget);
         bDetailram_2->setObjectName(QString::fromUtf8("bDetailram_2"));
         bDetailram_2->setGeometry(QRect(500, 640, 121, 41));
+        bDetailram_2->setStyleSheet(QString::fromUtf8("background-color: rgb(66, 198, 0);\n"
+"color: rgb(0, 0, 0);\n"
+"font: 10pt \"MS Shell Dlg 2\";\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"font: 75 9pt \"MS Shell Dlg 2\";"));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(10, 300, 91, 31));
         label_6->setFont(font4);
+        label_6->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(10, 380, 91, 31));
         label_7->setFont(font4);
+        label_7->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_8 = new QLabel(centralwidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setGeometry(QRect(10, 460, 91, 31));
         label_8->setFont(font4);
+        label_8->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(10, 530, 91, 31));
         label_9->setFont(font4);
+        label_9->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_10 = new QLabel(centralwidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(10, 590, 91, 31));
         label_10->setFont(font4);
+        label_10->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_11 = new QLabel(centralwidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(160, 160, 41, 31));
         label_11->setFont(font);
+        label_11->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(0, 229, 0);"));
         label_12 = new QLabel(centralwidget);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(310, 160, 41, 31));
         label_12->setFont(font);
+        label_12->setStyleSheet(QString::fromUtf8("color: rgb(0, 229, 0);"));
         label_13 = new QLabel(centralwidget);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(450, 160, 41, 31));
         label_13->setFont(font);
+        label_13->setStyleSheet(QString::fromUtf8("color: rgb(0, 229, 0);"));
         leBrandproce = new QLineEdit(centralwidget);
         leBrandproce->setObjectName(QString::fromUtf8("leBrandproce"));
         leBrandproce->setGeometry(QRect(110, 220, 141, 31));
+        leBrandproce->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leBrandgraph = new QLineEdit(centralwidget);
         leBrandgraph->setObjectName(QString::fromUtf8("leBrandgraph"));
         leBrandgraph->setGeometry(QRect(110, 300, 141, 31));
+        leBrandgraph->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leBrandram = new QLineEdit(centralwidget);
         leBrandram->setObjectName(QString::fromUtf8("leBrandram"));
         leBrandram->setGeometry(QRect(110, 380, 141, 31));
+        leBrandram->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leBrandstora = new QLineEdit(centralwidget);
         leBrandstora->setObjectName(QString::fromUtf8("leBrandstora"));
         leBrandstora->setGeometry(QRect(110, 460, 141, 31));
+        leBrandstora->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leBrandmother = new QLineEdit(centralwidget);
         leBrandmother->setObjectName(QString::fromUtf8("leBrandmother"));
         leBrandmother->setGeometry(QRect(110, 530, 141, 31));
+        leBrandmother->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leBrandpower = new QLineEdit(centralwidget);
         leBrandpower->setObjectName(QString::fromUtf8("leBrandpower"));
         leBrandpower->setGeometry(QRect(110, 590, 141, 31));
+        leBrandpower->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelram = new QLineEdit(centralwidget);
         leModelram->setObjectName(QString::fromUtf8("leModelram"));
         leModelram->setGeometry(QRect(250, 380, 161, 31));
+        leModelram->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelgraph = new QLineEdit(centralwidget);
         leModelgraph->setObjectName(QString::fromUtf8("leModelgraph"));
         leModelgraph->setGeometry(QRect(250, 300, 161, 31));
+        leModelgraph->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelmother = new QLineEdit(centralwidget);
         leModelmother->setObjectName(QString::fromUtf8("leModelmother"));
         leModelmother->setGeometry(QRect(250, 530, 161, 31));
+        leModelmother->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelstorag = new QLineEdit(centralwidget);
         leModelstorag->setObjectName(QString::fromUtf8("leModelstorag"));
         leModelstorag->setGeometry(QRect(250, 460, 161, 31));
+        leModelstorag->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelpower = new QLineEdit(centralwidget);
         leModelpower->setObjectName(QString::fromUtf8("leModelpower"));
         leModelpower->setGeometry(QRect(250, 590, 161, 31));
+        leModelpower->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         leModelProce = new QLineEdit(centralwidget);
         leModelProce->setObjectName(QString::fromUtf8("leModelProce"));
         leModelProce->setGeometry(QRect(250, 220, 161, 31));
+        leModelProce->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePriceram = new QLineEdit(centralwidget);
         lePriceram->setObjectName(QString::fromUtf8("lePriceram"));
         lePriceram->setGeometry(QRect(410, 380, 131, 31));
+        lePriceram->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePricegraphi = new QLineEdit(centralwidget);
         lePricegraphi->setObjectName(QString::fromUtf8("lePricegraphi"));
         lePricegraphi->setGeometry(QRect(410, 300, 131, 31));
+        lePricegraphi->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePricemother = new QLineEdit(centralwidget);
         lePricemother->setObjectName(QString::fromUtf8("lePricemother"));
         lePricemother->setGeometry(QRect(410, 530, 131, 31));
+        lePricemother->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePricestorag = new QLineEdit(centralwidget);
         lePricestorag->setObjectName(QString::fromUtf8("lePricestorag"));
         lePricestorag->setGeometry(QRect(410, 460, 131, 31));
+        lePricestorag->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePricepower = new QLineEdit(centralwidget);
         lePricepower->setObjectName(QString::fromUtf8("lePricepower"));
         lePricepower->setGeometry(QRect(410, 590, 131, 31));
+        lePricepower->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         lePriceproces = new QLineEdit(centralwidget);
         lePriceproces->setObjectName(QString::fromUtf8("lePriceproces"));
         lePriceproces->setGeometry(QRect(410, 220, 131, 31));
+        lePriceproces->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         line_13 = new QFrame(centralwidget);
         line_13->setObjectName(QString::fromUtf8("line_13"));
         line_13->setGeometry(QRect(100, 260, 20, 31));
@@ -366,6 +443,7 @@ public:
         line_23 = new QFrame(centralwidget);
         line_23->setObjectName(QString::fromUtf8("line_23"));
         line_23->setGeometry(QRect(240, 191, 20, 20));
+        line_23->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
         line_23->setFrameShape(QFrame::VLine);
         line_23->setFrameShadow(QFrame::Sunken);
         line_22 = new QFrame(centralwidget);
@@ -446,6 +524,11 @@ public:
         bBuild = new QPushButton(centralwidget);
         bBuild->setObjectName(QString::fromUtf8("bBuild"));
         bBuild->setGeometry(QRect(540, 20, 101, 51));
+        bBuild->setStyleSheet(QString::fromUtf8("background-color: rgb(66, 198, 0);\n"
+"color: rgb(0, 0, 0);\n"
+"font: 10pt \"MS Shell Dlg 2\";\n"
+"font: 75 8pt \"MS Shell Dlg 2\";\n"
+"font: 75 9pt \"MS Shell Dlg 2\";"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -462,7 +545,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "PC Builder", nullptr));
         display->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -496,6 +579,7 @@ public:
         label_11->setText(QCoreApplication::translate("MainWindow", "Brand", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Model", nullptr));
         label_13->setText(QCoreApplication::translate("MainWindow", "Price", nullptr));
+        leBrandproce->setText(QString());
         bBuild->setText(QCoreApplication::translate("MainWindow", "Build PC", nullptr));
     } // retranslateUi
 
