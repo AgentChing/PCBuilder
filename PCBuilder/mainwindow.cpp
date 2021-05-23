@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindow.h" // Opens mainwindows.h header file
 #include "ui_mainwindow.h"
 #include<iostream>
 #include<fstream>
@@ -167,6 +167,7 @@ class Powersupply:public parts{
         }
 };
 
+// Generate benchmark is to calculate the most appropriate set of PC user can buy without applying this algo.
 void generate_benchmark(Processor* processor ,Ram* ram,Storage* storage,Graphics* graphics,Motherboard* motherboard,Powersupply* powersupply,int* arr)
 {
    int price=0;
@@ -221,7 +222,7 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
     f.open("C:\\Users\\HP\\Desktop\\ram1.csv",ios::in);
     if(!f){
         cout<<"ERROR:No File found for Ram"<<endl;
-        exc=1;
+        exc=2;
     }
     else{
             for(int i=0;i<20;i++)
@@ -236,7 +237,7 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
      f.open("C:\\Users\\HP\\Desktop\\storage1.csv",ios::in);
     if(!f){
         cout<<"ERROR:No File found for Storage"<<endl;
-        exc=1;
+        exc=3;
     }
     else{
             for(int i=0;i<20;i++)
@@ -251,7 +252,7 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
          f.open("C:\\Users\\HP\\Desktop\\graphics1.csv",ios::in);
     if(!f){
         cout<<"ERROR:No File found for Graphics"<<endl;
-        exc=1;
+        exc=4;
     }
     else{
             for(int i=0;i<20;i++)
@@ -265,7 +266,7 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
              f.open("C:\\Users\\HP\\Desktop\\motherboard1.csv",ios::in);
     if(!f){
         cout<<"ERROR:No File found for Motherboard"<<endl;
-        exc=1;
+        exc=5;
     }
     else{
             for(int i=0;i<20;i++)
@@ -281,7 +282,7 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
              f.open("C:\\Users\\HP\\Desktop\\powersupply1.csv",ios::in);
     if(!f){
         cout<<"ERROR:No File found for Powersupply"<<endl;
-        exc=1;
+        exc=6;
     }
     else{
             for(int i=0;i<20;i++)
@@ -295,6 +296,8 @@ int readfile(Processor *processor, Graphics *graphics, Ram *ram, Storage *storag
     return exc;
 }
 
+
+// increases binary-counter by 1, which we will later use in optimisation part.
 void addbinary(int* arr)
 {
     int num=0;
@@ -311,6 +314,7 @@ void addbinary(int* arr)
 
 }
 
+// stores the components data after optimisation in the object PC.
 void build_pc(PC* pc,Processor *processor, Graphics *graphics, Ram *ram, Storage *storage, Motherboard *motherboard, Powersupply *powersupply,int* arr,int budget)
 {
     int i;
@@ -406,6 +410,8 @@ void build_pc(PC* pc,Processor *processor, Graphics *graphics, Ram *ram, Storage
 
 }
 
+
+// shows the data of our PC
 void showpc(PC pc)
 {
 
@@ -426,7 +432,7 @@ void showpc(PC pc)
 }
 
 
-
+// this class is just important to get every other class to inherit other classes without conflicts.
 class prgdata{
  public:
     int budget = 0;
@@ -459,7 +465,35 @@ MainWindow::MainWindow(QWidget *parent)
             {
                 ui->display->setText("DATA LOADED SUCESSFULLY");
             }
-            ui->display->setText("GENERATING BENCHMARKS");
+
+            if(status == 1)
+            {
+
+                 ui->display->setText("ERROR:No File found for Processor\n");
+            }
+            else if(status == 2)
+            {
+                ui->display->setText("ERROR:No File found for Ram\n");
+            }
+            else if(status == 3)
+            {
+                ui->display->setText("ERROR:No File found for Storage\n");
+            }
+            else if(status == 4)
+            {
+                ui->display->setText("ERROR:No File found for Graphics\n");
+            }
+            else if(status == 5)
+            {
+                ui->display->setText("ERROR:No File found for MotherBoard\n");
+            }
+            else if(status == 6)
+            {
+                ui->display->setText("ERROR:No File found for Power Supply\n");
+            }
+            else{
+               ui->display->setText("GENERATING BENCHMARKS");
+            }
             generate_benchmark(prg.processor,prg.ram,prg.storage,prg.graphics,prg.motherboard,prg.powersupply,prg.arra);
             prg.min = QString::number(prg.arra[0]);
             prg.max = QString::number(prg.arra[19]);

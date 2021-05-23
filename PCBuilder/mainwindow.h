@@ -59,6 +59,8 @@ private slots:
 
     void on_bDetailram_2_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
 

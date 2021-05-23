@@ -574,46 +574,7 @@ debug\mainwindow.obj: ..\PCBuilder\mainwindow.cpp ..\PCBuilder\mainwindow.h \
 		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QMessageBox \
 		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QDialog \
-		ui_mainwindow.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtCore\QVariant \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QApplication \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QFrame \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QLabel \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qpen.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QTextBrowser \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qtextbrowser.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.15.2\msvc2019_64\include\QtWidgets\QWidget
+		ui_mainwindow.h
 
 debug\qrc_img.obj: debug\qrc_img.cpp 
 
